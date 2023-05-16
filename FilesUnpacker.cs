@@ -6,12 +6,12 @@ using System.Text;
 
 namespace ModpackInstaller
 {
-    class ModsUnpacker
+    class FilesUnpacker
     {
         private string minecraftInstallationPath;
         private string projectfolder, zipPath;
         private string[] folders = new string[] { "mods", "config", "scripts", "shaders" };
-        public ModsUnpacker(string minecraftInstallationPath)
+        public FilesUnpacker(string minecraftInstallationPath)
         {
             this.minecraftInstallationPath = minecraftInstallationPath;
             this.projectfolder = Path.Combine(minecraftInstallationPath, Config.ProfileRelativePath);
@@ -26,7 +26,7 @@ namespace ModpackInstaller
             }
         }
 
-        public void UnpackMods()
+        public void UnpackFiles()
         {
             foreach (var folder in folders)
             {
@@ -48,6 +48,8 @@ namespace ModpackInstaller
                     zip.ExtractToDirectory(Path.Combine(this.projectfolder, folder));
                 }
             }
+
+            File.Copy(Path.Combine(this.zipPath, Config.ServerDataFileName), Path.Combine(this.projectfolder, Config.ServerDataFileName));
         }
     }
 }

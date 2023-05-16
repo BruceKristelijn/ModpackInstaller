@@ -20,6 +20,7 @@ namespace ModpackInstaller
         public const string LauncherProfilesFilename = "launcher_profiles.json";
 
         public const string ProfileName = "CreateMon";
+        public const string ServerDataFileName = "servers.dat";
         public const string ProfileImageName = "version_logo.png";
         public const string ForgeInstallerFilename = "forge-installer.jar";
         public const string ForgeCLIFilename = "forge-cli.jar";

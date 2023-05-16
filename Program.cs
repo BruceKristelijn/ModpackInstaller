@@ -16,14 +16,14 @@ namespace ModpackInstaller
             Console.WriteLine("Preparing installation.");
             ForgeInstaller forgeInstaller = new ForgeInstaller(minecraftInstallationPath);
             LauncherProfilesChanger launcherProfilesChanger = new LauncherProfilesChanger(minecraftInstallationPath);
-            ModsUnpacker modsUnpacker = new ModsUnpacker(minecraftInstallationPath);
+            FilesUnpacker modsUnpacker = new FilesUnpacker(minecraftInstallationPath);
 
             Console.WriteLine("Installing forge");
             forgeInstaller.InstallForge();
             Console.WriteLine("Applying profile");
             launcherProfilesChanger.ApplyProfile();
             Console.WriteLine("Unpacking mods");
-            modsUnpacker.UnpackMods();
+            modsUnpacker.UnpackFiles();
 
             Console.WriteLine("Done :)");
         }
